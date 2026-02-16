@@ -84,6 +84,7 @@ After compilation, run:
 
 Replace program_name with the executable name defined in the Makefile.
 
+```
 Concepts Practiced
 Object-Oriented Programming (OOP)
 Encapsulation
@@ -93,6 +94,7 @@ Dynamic Memory Management
 Rule of Three
 Virtual Tables (vtable concept)
 Clean class architecture
+```
 
 Author
 ```bash
