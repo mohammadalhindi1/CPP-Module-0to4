@@ -1,7 +1,7 @@
 # C++ Modules (CPP00 to CPP04)
 
 ```
-*This project has been created as part of the 42 curriculum by malhendi.*
+This project has been created as part of the 42 curriculum by malhendi.
 ```
 
 ---
