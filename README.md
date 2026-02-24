@@ -98,7 +98,10 @@ Virtual Tables (vtable concept)
 Clean class architecture
 ```
 
-Author
-```bash
-Mohammad Alhendi || Cloud & DevOps Enthusiast
-```
+## Author
+
+**Mohammad Alhindi**  
+Mohammad Alhendi || Cloud & DevOps
+
+- GitHub: https://github.com/mohammadalhindi1
+- LinkedIn: www.linkedin.com/in/mohammad-alhendi13
