@@ -100,8 +100,7 @@ Clean class architecture
 
 ## Author
 
-**Mohammad Alhindi**  
-Mohammad Alhendi || Cloud & DevOps
+**Mohammad Alhindi (malhendi)**
 
 - GitHub: https://github.com/mohammadalhindi1
 - LinkedIn: www.linkedin.com/in/mohammad-alhendi13
