@@ -3,7 +3,7 @@
 
 int main(int ac, char *av[])
 {
-    int i;
+    int    i;
 
     if (ac == 1)
     {
@@ -13,7 +13,7 @@ int main(int ac, char *av[])
     i = 1;
     while (i < ac)
     {
-        int j;
+        int    j;
 
         j = 0;
         while(av[i][j]  != '\0')
