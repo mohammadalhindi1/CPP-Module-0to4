@@ -16,6 +16,9 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+main.o PhoneBook.o: PhoneBook.hpp
+Contact.o PhoneBook.o: Contact.hpp
+
 clean:
 	rm -f $(OBJ)
 
