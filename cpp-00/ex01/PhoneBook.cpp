@@ -1,43 +1,53 @@
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
-#include <sstream>
 
-static std::string formatField(std::string str)
+static std::string formatField(const std::string &str)
 {
     if (str.length() > 10)
         return (str.substr(0, 9) + ".");
     return (str);
 }
 
-static std::string readNonEmpty(std::string prompt)
+static bool readNonEmpty(const std::string &prompt, std::string &input)
 {
-    std::string input;
-
-    while (input.empty())
+    while (true)
     {
         std::cout << prompt;
-        std::getline(std::cin, input);
-        if (input.empty())
-            std::cout << "Field cannot be empty." << std::endl;
+        if (!std::getline(std::cin, input))
+            return (false);
+        if (!input.empty())
+            return (true);
+        std::cout << "Field cannot be empty." << std::endl;
     }
-    return (input);
 }
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() : contactCount(0), nextIndex(0)
 {
-    contactCount = 0;
-    nextIndex = 0;
 }
 
 void PhoneBook::addContact()
 {
-    contacts[nextIndex].setFirstName(readNonEmpty("First name: "));
-    contacts[nextIndex].setLastName(readNonEmpty("Last name: "));
-    contacts[nextIndex].setNickname(readNonEmpty("Nickname: "));
-    contacts[nextIndex].setPhoneNumber(readNonEmpty("Phone number: "));
-    contacts[nextIndex].setDarkestSecret(readNonEmpty("Darkest secret: "));
+    Contact     contact;
+    std::string input;
 
+    if (!readNonEmpty("First name: ", input))
+        return;
+    contact.setFirstName(input);
+    if (!readNonEmpty("Last name: ", input))
+        return;
+    contact.setLastName(input);
+    if (!readNonEmpty("Nickname: ", input))
+        return;
+    contact.setNickname(input);
+    if (!readNonEmpty("Phone number: ", input))
+        return;
+    contact.setPhoneNumber(input);
+    if (!readNonEmpty("Darkest secret: ", input))
+        return;
+    contact.setDarkestSecret(input);
+
+    contacts[nextIndex] = contact;
     if (contactCount < 8)
         contactCount++;
 
@@ -49,7 +59,6 @@ void PhoneBook::searchContact() const
 {
     std::string input;
     int         index;
-    std::stringstream ss;
     int         i;
 
     if (contactCount == 0)
@@ -74,10 +83,16 @@ void PhoneBook::searchContact() const
     }
 
     std::cout << "Enter index: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        return;
 
-    ss << input;
-    if (!(ss >> index) || index < 0 || index >= contactCount)
+    if (input.length() != 1 || input[0] < '0' || input[0] > '7')
+    {
+        std::cout << "Invalid index." << std::endl;
+        return;
+    }
+    index = input[0] - '0';
+    if (index >= contactCount)
     {
         std::cout << "Invalid index." << std::endl;
         return;
