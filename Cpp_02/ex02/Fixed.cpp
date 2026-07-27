@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
-#include <iostream>
 
 Fixed::Fixed() : _rawBits(0)
 {
