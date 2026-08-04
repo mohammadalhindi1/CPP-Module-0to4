@@ -15,8 +15,8 @@ This repository documents my progress through the first five C++ modules at
 after working primarily with C, with an emphasis on object-oriented design,
 resource management, and predictable class behavior.
 
-The repository currently contains **11 exercises across CPP00, CPP01, and
-CPP02**. CPP03 and CPP04 will be added as the learning path progresses.
+The repository currently contains **12 exercises across CPP00 through CPP03**.
+CPP04 will be added as the learning path progresses.
 
 All included exercises use the C++98 standard and compile with:
 
@@ -41,7 +41,7 @@ All included exercises use the C++98 standard and compile with:
 | CPP00 | `ex00`–`ex01` | C++ syntax, streams, classes, and encapsulation | Available |
 | CPP01 | `ex00`–`ex05` | Memory, references, object lifetime, and file streams | Available |
 | CPP02 | `ex00`–`ex02` | Orthodox Canonical Form, fixed-point numbers, and operators | Available |
-| CPP03 | — | Inheritance and class hierarchies | Not added yet |
+| CPP03 | `ex01` | Inheritance and class hierarchies | Available |
 | CPP04 | — | Runtime polymorphism and abstract classes | Not added yet |
 
 ## What Each Exercise Covers
@@ -84,6 +84,16 @@ keeps the original input file unchanged.
 CPP02 builds the same `Fixed` class incrementally. Each exercise extends the
 previous implementation so the effect of every new feature remains clear.
 
+### CPP03 — Inheritance
+
+| Exercise | Program | Main learning objective |
+| --- | --- | --- |
+| [`ex01`](./Cpp_03/ex01) | `scavtrap` | Public inheritance, protected state, constructor/destructor chaining, and specialized derived-class behavior |
+
+CPP03 begins with `ScavTrap`, a specialized `ClapTrap` that reuses the base
+class behavior while providing different statistics, its own attack message,
+and the `guardGate()` ability.
+
 ## Project Structure
 
 ```text
@@ -102,6 +112,8 @@ CPP-Module-0to4/
 │   ├── ex00/   # Canonical Fixed class
 │   ├── ex01/   # Numeric conversions
 │   └── ex02/   # Operator overloads
+├── Cpp_03/
+│   └── ex01/   # ClapTrap and ScavTrap inheritance
 └── README.md
 ```
 
@@ -172,11 +184,14 @@ The exercises in this repository practice:
 - Fixed-point number representation.
 - Function and operator overloading.
 - Comparison and arithmetic operators.
+- Public inheritance and base/derived class relationships.
+- Constructor and destructor chaining.
+- Reusing base-class behavior in specialized classes.
 - Clean, modular class interfaces.
 
-Future CPP03 and CPP04 work will extend these foundations into inheritance,
-virtual functions, runtime polymorphism, abstract classes, interfaces, and deep
-copy semantics.
+Future CPP03 and CPP04 work will extend these foundations into multiple
+inheritance, virtual functions, runtime polymorphism, abstract classes,
+interfaces, and deep copy semantics.
 
 ## Author
 
