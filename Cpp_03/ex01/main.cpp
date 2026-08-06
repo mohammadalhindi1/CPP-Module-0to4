@@ -36,6 +36,12 @@ int main(void)
     copy.attack("Copy target");
     assigned.guardGate();
 
+    std::cout << "\n--- No actions without hit points ---" << std::endl;
+    ScavTrap disabled("Disabled");
+    disabled.takeDamage(100);
+    disabled.attack("Target");
+    disabled.beRepaired(10);
+
     std::cout << "\n--- Destruction order ---" << std::endl;
     return 0;
 }
