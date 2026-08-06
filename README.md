@@ -15,7 +15,7 @@ This repository documents my progress through the first five C++ modules at
 after working primarily with C, with an emphasis on object-oriented design,
 resource management, and predictable class behavior.
 
-The repository currently contains **12 exercises across CPP00 through CPP03**.
+The repository currently contains **15 exercises across CPP00 through CPP03**.
 CPP04 will be added as the learning path progresses.
 
 All included exercises use the C++98 standard and compile with:
@@ -41,7 +41,7 @@ All included exercises use the C++98 standard and compile with:
 | CPP00 | `ex00`–`ex01` | C++ syntax, streams, classes, and encapsulation | Available |
 | CPP01 | `ex00`–`ex05` | Memory, references, object lifetime, and file streams | Available |
 | CPP02 | `ex00`–`ex02` | Orthodox Canonical Form, fixed-point numbers, and operators | Available |
-| CPP03 | `ex01` | Inheritance and class hierarchies | Available |
+| CPP03 | `ex00`–`ex03` | Inheritance, multiple inheritance, and the diamond problem | Available |
 | CPP04 | — | Runtime polymorphism and abstract classes | Not added yet |
 
 ## What Each Exercise Covers
@@ -88,11 +88,15 @@ previous implementation so the effect of every new feature remains clear.
 
 | Exercise | Program | Main learning objective |
 | --- | --- | --- |
+| [`ex00`](./Cpp_03/ex00) | `claptrap` | Base-class design, state management, and Orthodox Canonical Form |
 | [`ex01`](./Cpp_03/ex01) | `scavtrap` | Public inheritance, protected state, constructor/destructor chaining, and specialized derived-class behavior |
+| [`ex02`](./Cpp_03/ex02) | `fragtrap` | Reusing a base class across multiple specialized derived classes |
+| [`ex03`](./Cpp_03/ex03) | `diamondtrap` | Multiple inheritance, virtual base classes, name hiding, and the diamond problem |
 
-CPP03 begins with `ScavTrap`, a specialized `ClapTrap` that reuses the base
-class behavior while providing different statistics, its own attack message,
-and the `guardGate()` ability.
+CPP03 builds a hierarchy around `ClapTrap`. `ScavTrap` and `FragTrap` reuse the
+base state while adding different statistics and abilities. `DiamondTrap`
+combines both derived classes and uses virtual inheritance so it contains one
+shared `ClapTrap` base instance.
 
 ## Project Structure
 
@@ -113,7 +117,10 @@ CPP-Module-0to4/
 │   ├── ex01/   # Numeric conversions
 │   └── ex02/   # Operator overloads
 ├── Cpp_03/
-│   └── ex01/   # ClapTrap and ScavTrap inheritance
+│   ├── ex00/   # ClapTrap base class
+│   ├── ex01/   # ScavTrap inheritance
+│   ├── ex02/   # FragTrap inheritance
+│   └── ex03/   # DiamondTrap multiple inheritance
 └── README.md
 ```
 
@@ -187,11 +194,12 @@ The exercises in this repository practice:
 - Public inheritance and base/derived class relationships.
 - Constructor and destructor chaining.
 - Reusing base-class behavior in specialized classes.
+- Multiple inheritance and virtual base classes.
+- Resolving the diamond inheritance problem.
 - Clean, modular class interfaces.
 
-Future CPP03 and CPP04 work will extend these foundations into multiple
-inheritance, virtual functions, runtime polymorphism, abstract classes,
-interfaces, and deep copy semantics.
+CPP04 will extend these foundations into virtual functions, runtime
+polymorphism, abstract classes, interfaces, and deep copy semantics.
 
 ## Author
 
