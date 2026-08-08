@@ -15,8 +15,8 @@ This repository documents my progress through the first five C++ modules at
 after working primarily with C, with an emphasis on object-oriented design,
 resource management, and predictable class behavior.
 
-The repository currently contains **15 exercises across CPP00 through CPP03**.
-CPP04 will be added as the learning path progresses.
+The repository currently contains **16 exercises across CPP00 through CPP04**.
+CPP04 is now in progress, beginning with runtime polymorphism.
 
 All included exercises use the C++98 standard and compile with:
 
@@ -42,7 +42,7 @@ All included exercises use the C++98 standard and compile with:
 | CPP01 | `ex00`–`ex05` | Memory, references, object lifetime, and file streams | Available |
 | CPP02 | `ex00`–`ex02` | Orthodox Canonical Form, fixed-point numbers, and operators | Available |
 | CPP03 | `ex00`–`ex03` | Inheritance, multiple inheritance, and the diamond problem | Available |
-| CPP04 | — | Runtime polymorphism and abstract classes | Not added yet |
+| CPP04 | `ex00` | Runtime polymorphism and virtual functions | In progress |
 
 ## What Each Exercise Covers
 
@@ -98,6 +98,17 @@ base state while adding different statistics and abilities. `DiamondTrap`
 combines both derived classes and uses virtual inheritance so it contains one
 shared `ClapTrap` base instance.
 
+### CPP04 — Runtime Polymorphism
+
+| Exercise | Program | Main learning objective |
+| --- | --- | --- |
+| [`ex00`](./Cpp_04/ex00) | `polymorphism` | Virtual functions, runtime dispatch, safe base-pointer deletion, and the effect of a missing `virtual` |
+
+CPP04 starts with an `Animal` hierarchy. Base-class pointers can refer to
+`Dog` and `Cat` objects while virtual dispatch selects the correct sound at
+runtime. A parallel `WrongAnimal` hierarchy demonstrates what happens when
+`makeSound()` is not virtual.
+
 ## Project Structure
 
 ```text
@@ -121,6 +132,8 @@ CPP-Module-0to4/
 │   ├── ex01/   # ScavTrap inheritance
 │   ├── ex02/   # FragTrap inheritance
 │   └── ex03/   # DiamondTrap multiple inheritance
+├── Cpp_04/
+│   └── ex00/   # Runtime polymorphism
 └── README.md
 ```
 
@@ -196,10 +209,12 @@ The exercises in this repository practice:
 - Reusing base-class behavior in specialized classes.
 - Multiple inheritance and virtual base classes.
 - Resolving the diamond inheritance problem.
+- Virtual functions and runtime method dispatch.
+- Safe destruction through base-class pointers.
 - Clean, modular class interfaces.
 
-CPP04 will extend these foundations into virtual functions, runtime
-polymorphism, abstract classes, interfaces, and deep copy semantics.
+Later CPP04 exercises extend these foundations into abstract classes,
+interfaces, and deep copy semantics.
 
 ## Author
 
