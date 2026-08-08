@@ -6,7 +6,7 @@ programming modules of the 42 curriculum.
 ![C++](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B)
 ![Standard](https://img.shields.io/badge/Standard-C%2B%2B98-blue?style=flat-square)
 ![42 Amman](https://img.shields.io/badge/42-Amman-000000?style=flat-square&logo=42)
-![Status](https://img.shields.io/badge/Status-In%20Progress-f59e0b?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-22c55e?style=flat-square)
 
 ## Overview
 
@@ -15,8 +15,8 @@ This repository documents my progress through the first five C++ modules at
 after working primarily with C, with an emphasis on object-oriented design,
 resource management, and predictable class behavior.
 
-The repository currently contains **16 exercises across CPP00 through CPP04**.
-CPP04 is now in progress, beginning with runtime polymorphism.
+The repository contains **19 exercises across CPP00 through CPP04**. All five
+modules in this learning path are now complete.
 
 All included exercises use the C++98 standard and compile with:
 
@@ -42,7 +42,7 @@ All included exercises use the C++98 standard and compile with:
 | CPP01 | `ex00`–`ex05` | Memory, references, object lifetime, and file streams | Available |
 | CPP02 | `ex00`–`ex02` | Orthodox Canonical Form, fixed-point numbers, and operators | Available |
 | CPP03 | `ex00`–`ex03` | Inheritance, multiple inheritance, and the diamond problem | Available |
-| CPP04 | `ex00` | Runtime polymorphism and virtual functions | In progress |
+| CPP04 | `ex00`–`ex03` | Polymorphism, deep copies, abstract classes, and interfaces | Available |
 
 ## What Each Exercise Covers
 
@@ -98,16 +98,19 @@ base state while adding different statistics and abilities. `DiamondTrap`
 combines both derived classes and uses virtual inheritance so it contains one
 shared `ClapTrap` base instance.
 
-### CPP04 — Runtime Polymorphism
+### CPP04 — Polymorphism and Interfaces
 
 | Exercise | Program | Main learning objective |
 | --- | --- | --- |
 | [`ex00`](./Cpp_04/ex00) | `polymorphism` | Virtual functions, runtime dispatch, safe base-pointer deletion, and the effect of a missing `virtual` |
+| [`ex01`](./Cpp_04/ex01) | `brains` | Dynamic member allocation, ownership, deep copy construction, and deep copy assignment |
+| [`ex02`](./Cpp_04/ex02) | `abstract` | Abstract base classes and pure virtual functions |
+| [`ex03`](./Cpp_04/ex03) | `materia` | Interfaces, cloning, inventory ownership, and reusable polymorphic objects |
 
-CPP04 starts with an `Animal` hierarchy. Base-class pointers can refer to
-`Dog` and `Cat` objects while virtual dispatch selects the correct sound at
-runtime. A parallel `WrongAnimal` hierarchy demonstrates what happens when
-`makeSound()` is not virtual.
+CPP04 starts with an `Animal` hierarchy and extends it with dynamically
+allocated `Brain` objects, deep-copy behavior, and an abstract base class. The
+final exercise builds a complete Materia system using interfaces, cloning,
+runtime polymorphism, and explicit memory ownership.
 
 ## Project Structure
 
@@ -133,7 +136,10 @@ CPP-Module-0to4/
 │   ├── ex02/   # FragTrap inheritance
 │   └── ex03/   # DiamondTrap multiple inheritance
 ├── Cpp_04/
-│   └── ex00/   # Runtime polymorphism
+│   ├── ex00/   # Runtime polymorphism
+│   ├── ex01/   # Brain and deep copies
+│   ├── ex02/   # Abstract Animal class
+│   └── ex03/   # Materia interfaces
 └── README.md
 ```
 
@@ -211,10 +217,10 @@ The exercises in this repository practice:
 - Resolving the diamond inheritance problem.
 - Virtual functions and runtime method dispatch.
 - Safe destruction through base-class pointers.
+- Deep copying of dynamically allocated class members.
+- Abstract classes and pure virtual functions.
+- Interfaces, cloning, and inventory ownership.
 - Clean, modular class interfaces.
-
-Later CPP04 exercises extend these foundations into abstract classes,
-interfaces, and deep copy semantics.
 
 ## Author
 
