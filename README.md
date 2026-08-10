@@ -181,7 +181,7 @@ Each exercise is developed as an independent project with its own source files, 
 ### Clone
 
 ```bash
-git clone https://github.com/mohammadalhindi1/CPP-Module-0to4.git cpp-modules
+git clone <repository-url> cpp-modules
 cd cpp-modules
 ```
 
