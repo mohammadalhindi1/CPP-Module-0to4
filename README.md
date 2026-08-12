@@ -1,235 +1,162 @@
-# 42 C++ Modules — CPP00 to CPP04
+# 42 C++ Modules — CPP00 to CPP09
 
-A structured C++98 learning journey through the introductory object-oriented
-programming modules of the 42 curriculum.
+<div align="center">
 
-![C++](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B)
-![Standard](https://img.shields.io/badge/Standard-C%2B%2B98-blue?style=flat-square)
-![42 Amman](https://img.shields.io/badge/42-Amman-000000?style=flat-square&logo=42)
-![Status](https://img.shields.io/badge/Status-Complete-22c55e?style=flat-square)
+**C++98 implementations of the 42 C++ curriculum, maintained module by module.**
+
+![C++](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![C++98](https://img.shields.io/badge/Standard-C%2B%2B98-1f6feb?style=for-the-badge)
+![42 Amman](https://img.shields.io/badge/42-Amman-000000?style=for-the-badge&logo=42&logoColor=white)
+![Progress](https://img.shields.io/badge/Progress-5%20%2F%2010%20Modules-f59e0b?style=for-the-badge)
+
+`CPP00` · `CPP01` · `CPP02` · `CPP03` · `CPP04` · `CPP05` · `CPP06` · `CPP07` · `CPP08` · `CPP09`
+
+</div>
+
+---
 
 ## Overview
 
-This repository documents my progress through the first five C++ modules at
-**42 Amman**. The exercises are designed to build a solid foundation in C++
-after working primarily with C, with an emphasis on object-oriented design,
-resource management, and predictable class behavior.
+This repository contains my implementations of the **42 C++ Modules** at **42 Amman**. Each exercise is maintained as an independent C++98 project with its own source files, headers, test entry point, and `Makefile`.
 
-The repository contains **19 exercises across CPP00 through CPP04**. All five
-modules in this learning path are now complete.
+The current codebase includes **19 completed exercises across CPP00–CPP04**. Modules **CPP05–CPP09** remain part of the repository roadmap and will be added only after their implementations are complete and validated.
 
-All included exercises use the C++98 standard and compile with:
+The repository is an implementation record rather than a tutorial: it highlights technical scope, engineering constraints, and verified progress without replacing the official 42 subjects.
 
-```text
--Wall -Wextra -Werror -std=c++98
-```
+## Contents
 
-## Table of Contents
-
-- [Repository Progress](#repository-progress)
-- [What Each Exercise Covers](#what-each-exercise-covers)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Build Commands](#build-commands)
-- [Core Concepts](#core-concepts)
+- [Repository Status](#repository-status)
+- [Implemented Modules](#implemented-modules)
+- [Repository Structure](#repository-structure)
+- [Build](#build)
+- [42 Compliance](#42-compliance)
+- [Completion Criteria](#completion-criteria)
 - [Author](#author)
 
-## Repository Progress
+## Repository Status
 
-| Module | Exercises currently included | Focus | Status |
-| --- | --- | --- | --- |
-| CPP00 | `ex00`–`ex01` | C++ syntax, streams, classes, and encapsulation | Available |
-| CPP01 | `ex00`–`ex05` | Memory, references, object lifetime, and file streams | Available |
-| CPP02 | `ex00`–`ex02` | Orthodox Canonical Form, fixed-point numbers, and operators | Available |
-| CPP03 | `ex00`–`ex03` | Inheritance, multiple inheritance, and the diamond problem | Available |
-| CPP04 | `ex00`–`ex03` | Polymorphism, deep copies, abstract classes, and interfaces | Available |
+| Module | Technical scope | Status |
+| --- | --- | :---: |
+| [`CPP00`](./Cpp_00) | Namespaces, streams, classes, and encapsulation | Complete |
+| [`CPP01`](./Cpp_01) | Object lifetime, memory allocation, references, pointers, and file streams | Complete |
+| [`CPP02`](./Cpp_02) | Orthodox Canonical Form, fixed-point arithmetic, and operator overloading | Complete |
+| [`CPP03`](./Cpp_03) | Inheritance, class hierarchies, and multiple inheritance | Complete |
+| [`CPP04`](./Cpp_04) | Runtime polymorphism, abstract classes, interfaces, and deep copy semantics | Complete |
+| `CPP05` | Exceptions, validation, and executable forms | Planned |
+| `CPP06` | Scalar conversion, serialization, and runtime type identification | Planned |
+| `CPP07` | Function templates, generic iteration, and template classes | Planned |
+| `CPP08` | STL containers, iterators, and algorithms | Planned |
+| `CPP09` | Data processing, container selection, and algorithmic performance | Planned |
 
-## What Each Exercise Covers
+> Planned entries describe the curriculum direction. The official subject version assigned by 42 defines the final scope of each module.
 
-### CPP00 — Introduction to C++
+## Implemented Modules
 
-| Exercise | Program | Main learning objective |
+### CPP00 — Fundamentals and Encapsulation
+
+| Exercise | Program | Technical scope |
 | --- | --- | --- |
-| [`ex00`](./Cpp_00/ex00) | `megaphone` | Command-line arguments, strings, character conversion, and output streams |
-| [`ex01`](./Cpp_00/ex01) | `phonebook` | Classes, private data, getters and setters, formatted output, and a fixed-size contact store |
+| [`ex00`](./Cpp_00/ex00) | `megaphone` | Command-line input, character conversion, and stream output |
+| [`ex01`](./Cpp_00/ex01) | `phonebook` | Encapsulated classes, fixed-capacity storage, formatted lookup, and input handling |
 
-The phone book supports three interactive commands:
+### CPP01 — Memory and Object Lifetime
 
-- `ADD` — save a contact.
-- `SEARCH` — display the contact list and inspect one entry.
-- `EXIT` — close the program.
-
-### CPP01 — Memory, References, and Object Lifetime
-
-| Exercise | Program | Main learning objective |
+| Exercise | Program | Technical scope |
 | --- | --- | --- |
-| [`ex00`](./Cpp_01/ex00) | `zombie` | Stack allocation, heap allocation, constructors, destructors, `new`, and `delete` |
-| [`ex01`](./Cpp_01/ex01) | `zombieHorde` | Dynamic arrays and correct cleanup with `delete[]` |
-| [`ex02`](./Cpp_01/ex02) | `brain` | The relationship between a value, a pointer, and a reference |
-| [`ex03`](./Cpp_01/ex03) | `violence` | References, nullable pointers, and relationships between objects |
-| [`ex04`](./Cpp_01/ex04) | `replace` | File streams, string search, and non-destructive text replacement |
-| [`ex05`](./Cpp_01/ex05) | `harl` | Pointers to member functions and behavior dispatch without long conditional chains |
+| [`ex00`](./Cpp_01/ex00) | `zombie` | Stack and heap allocation, constructors, destructors, `new`, and `delete` |
+| [`ex01`](./Cpp_01/ex01) | `zombieHorde` | Dynamic object arrays and deterministic cleanup with `delete[]` |
+| [`ex02`](./Cpp_01/ex02) | `brain` | Pointer and reference identity, addresses, and aliasing |
+| [`ex03`](./Cpp_01/ex03) | `violence` | Object relationships through references and nullable pointers |
+| [`ex04`](./Cpp_01/ex04) | `replace` | File streams and non-destructive string replacement |
+| [`ex05`](./Cpp_01/ex05) | `harl` | Member-function pointers and behavior dispatch |
 
-The file replacement exercise creates a new `<filename>.replace` file and
-keeps the original input file unchanged.
+### CPP02 — Ad-hoc Polymorphism
 
-### CPP02 — Fixed-Point Numbers and Operator Overloading
-
-| Exercise | Program | Main learning objective |
+| Exercise | Program | Technical scope |
 | --- | --- | --- |
-| [`ex00`](./Cpp_02/ex00) | `fixed` | Orthodox Canonical Form, copy construction, copy assignment, and raw fixed-point storage |
-| [`ex01`](./Cpp_02/ex01) | `fixed` | Integer and floating-point conversion plus stream insertion with `operator<<` |
-| [`ex02`](./Cpp_02/ex02) | `fixed` | Comparison, arithmetic, increment/decrement, and `min`/`max` operator-style behavior |
-
-CPP02 builds the same `Fixed` class incrementally. Each exercise extends the
-previous implementation so the effect of every new feature remains clear.
+| [`ex00`](./Cpp_02/ex00) | `fixed` | Orthodox Canonical Form and raw fixed-point representation |
+| [`ex01`](./Cpp_02/ex01) | `fixed` | Numeric conversion and stream insertion overloading |
+| [`ex02`](./Cpp_02/ex02) | `fixed` | Comparison, arithmetic, increment/decrement, and `min`/`max` overloads |
 
 ### CPP03 — Inheritance
 
-| Exercise | Program | Main learning objective |
+| Exercise | Program | Technical scope |
 | --- | --- | --- |
-| [`ex00`](./Cpp_03/ex00) | `claptrap` | Base-class design, state management, and Orthodox Canonical Form |
-| [`ex01`](./Cpp_03/ex01) | `scavtrap` | Public inheritance, protected state, constructor/destructor chaining, and specialized derived-class behavior |
-| [`ex02`](./Cpp_03/ex02) | `fragtrap` | Reusing a base class across multiple specialized derived classes |
-| [`ex03`](./Cpp_03/ex03) | `diamondtrap` | Multiple inheritance, virtual base classes, name hiding, and the diamond problem |
+| [`ex00`](./Cpp_03/ex00) | `claptrap` | Stateful base-class design and canonical copy behavior |
+| [`ex01`](./Cpp_03/ex01) | `scavtrap` | Public inheritance, construction order, and specialized behavior |
+| [`ex02`](./Cpp_03/ex02) | `fragtrap` | Shared base behavior across sibling derived classes |
+| [`ex03`](./Cpp_03/ex03) | `diamondtrap` | Multiple inheritance, method selection, and diamond hierarchy resolution |
 
-CPP03 builds a hierarchy around `ClapTrap`. `ScavTrap` and `FragTrap` reuse the
-base state while adding different statistics and abilities. `DiamondTrap`
-combines both derived classes and uses virtual inheritance so it contains one
-shared `ClapTrap` base instance.
+### CPP04 — Subtype Polymorphism
 
-### CPP04 — Polymorphism and Interfaces
-
-| Exercise | Program | Main learning objective |
+| Exercise | Program | Technical scope |
 | --- | --- | --- |
-| [`ex00`](./Cpp_04/ex00) | `polymorphism` | Virtual functions, runtime dispatch, safe base-pointer deletion, and the effect of a missing `virtual` |
-| [`ex01`](./Cpp_04/ex01) | `brains` | Dynamic member allocation, ownership, deep copy construction, and deep copy assignment |
+| [`ex00`](./Cpp_04/ex00) | `polymorphism` | Virtual dispatch and safe destruction through base pointers |
+| [`ex01`](./Cpp_04/ex01) | `brains` | Dynamic ownership and deep copy construction/assignment |
 | [`ex02`](./Cpp_04/ex02) | `abstract` | Abstract base classes and pure virtual functions |
-| [`ex03`](./Cpp_04/ex03) | `materia` | Interfaces, cloning, inventory ownership, and reusable polymorphic objects |
+| [`ex03`](./Cpp_04/ex03) | `materia` | Interface-driven design, cloning, inventory ownership, and polymorphic objects |
 
-CPP04 starts with an `Animal` hierarchy and extends it with dynamically
-allocated `Brain` objects, deep-copy behavior, and an abstract base class. The
-final exercise builds a complete Materia system using interfaces, cloning,
-runtime polymorphism, and explicit memory ownership.
-
-## Project Structure
+## Repository Structure
 
 ```text
-CPP-Module-0to4/
+.
 ├── Cpp_00/
-│   ├── ex00/   # Megaphone
-│   └── ex01/   # PhoneBook
 ├── Cpp_01/
-│   ├── ex00/   # Zombie allocation
-│   ├── ex01/   # Zombie horde
-│   ├── ex02/   # Pointers and references
-│   ├── ex03/   # Weapon, HumanA, and HumanB
-│   ├── ex04/   # File replacement
-│   └── ex05/   # Harl
 ├── Cpp_02/
-│   ├── ex00/   # Canonical Fixed class
-│   ├── ex01/   # Numeric conversions
-│   └── ex02/   # Operator overloads
 ├── Cpp_03/
-│   ├── ex00/   # ClapTrap base class
-│   ├── ex01/   # ScavTrap inheritance
-│   ├── ex02/   # FragTrap inheritance
-│   └── ex03/   # DiamondTrap multiple inheritance
 ├── Cpp_04/
-│   ├── ex00/   # Runtime polymorphism
-│   ├── ex01/   # Brain and deep copies
-│   ├── ex02/   # Abstract Animal class
-│   └── ex03/   # Materia interfaces
 └── README.md
 ```
 
-Each exercise is self-contained and includes its own source files and
-`Makefile`.
+Module directories are added when implementation begins; empty placeholders for planned work are not maintained.
 
-## Getting Started
+## Build
 
-### Prerequisites
-
-You need:
-
-- A Unix-like environment such as Linux, macOS, or WSL.
-- A C++ compiler with C++98 support.
-- GNU Make.
-- Git.
-
-### Clone the repository
+Run each exercise from its own directory:
 
 ```bash
-git clone https://github.com/mohammadalhindi1/CPP-Module-0to4.git
-cd CPP-Module-0to4
-```
-
-### Build and run an exercise
-
-Enter the exercise directory, compile it, and run the generated executable:
-
-```bash
-cd Cpp_00/ex01
+cd Cpp_04/ex03
 make
-./phonebook
+./materia
 ```
 
-Another example:
+The generated executable is defined by the exercise `Makefile`. Standard targets are `all`, `clean`, `fclean`, and `re`.
 
-```bash
-cd Cpp_01/ex04
-make
-./replace input.txt old_text new_text
-```
+## 42 Compliance
 
-To find the executable name for any exercise, check the `Program` column above
-or the `NAME` variable in that exercise's `Makefile`.
+All implementations follow the rules of their assigned subject, including:
 
-## Build Commands
+- compilation with `c++ -Wall -Wextra -Werror -std=c++98`;
+- no C++11 or later language features;
+- no Boost or external libraries;
+- standard containers and algorithms only in modules where they are explicitly permitted;
+- Orthodox Canonical Form where required;
+- explicit ownership and cleanup for dynamically allocated resources;
+- an independent `Makefile` for every exercise.
 
-Every exercise supports the standard 42 Makefile commands:
+The official subject provided by 42 remains the final authority whenever requirements differ between subject versions.
 
-| Command | Purpose |
-| --- | --- |
-| `make` | Compile the exercise |
-| `make clean` | Remove object files |
-| `make fclean` | Remove object files and the executable |
-| `make re` | Perform a clean rebuild |
+## Completion Criteria
 
-## Core Concepts
+A module is marked **Complete** only when all of its exercises:
 
-The exercises in this repository practice:
-
-- C++ namespaces and standard input/output streams.
-- Classes, objects, access control, and encapsulation.
-- Constructors, destructors, and object lifetime.
-- Stack allocation versus dynamic memory allocation.
-- Pointers, references, and `const` correctness.
-- File input/output and string manipulation.
-- Orthodox Canonical Form and the Rule of Three.
-- Fixed-point number representation.
-- Function and operator overloading.
-- Comparison and arithmetic operators.
-- Public inheritance and base/derived class relationships.
-- Constructor and destructor chaining.
-- Reusing base-class behavior in specialized classes.
-- Multiple inheritance and virtual base classes.
-- Resolving the diamond inheritance problem.
-- Virtual functions and runtime method dispatch.
-- Safe destruction through base-class pointers.
-- Deep copying of dynamically allocated class members.
-- Abstract classes and pure virtual functions.
-- Interfaces, cloning, and inventory ownership.
-- Clean, modular class interfaces.
+1. Compile cleanly with the required flags.
+2. Cover normal, boundary, and failure paths through focused tests.
+3. Respect the restrictions of the assigned subject.
+4. Have no known memory leaks or invalid memory access.
+5. Are documented and linked from this README.
 
 ## Author
 
-**Mohammad Alhindi** (`malhendi`)
+**Mohammad Alhindi** · `malhendi`
 
 - [GitHub](https://github.com/mohammadalhindi1)
 - [LinkedIn](https://www.linkedin.com/in/mohammad-alhendi13)
 
 ---
 
-> This repository is maintained as a learning record and reference for the 42
-> C++ curriculum.
+<div align="center">
+
+**A single, versioned record of the complete 42 C++ path.**
+
+</div>
